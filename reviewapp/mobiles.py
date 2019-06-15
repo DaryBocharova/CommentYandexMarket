@@ -1,8 +1,13 @@
 import requests
 import csv
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
+import socks
+import socket
 
 def get_html(url,params):
+    socks.set_default_proxy(socks.SOCKS5, "localhost", 9150)
+    socket.socket = socks.socksocket
     try:
         result = requests.get(url,params)
         result.raise_for_status()
@@ -29,7 +34,8 @@ def get_mobile_all():
 
         html = get_html(url,params=params)
         if html:
-            soup = BeautifulSoup(html, 'html.parser')     
+            soup = BeautifulSoup(html, 'html.parser')  
+            print(soup)   
             #with open("python-org-news.html", "w",encoding="utf8") as f:
             #    f.write(html)   
 
@@ -39,16 +45,20 @@ def get_mobile_all():
                 link = all_mobile.find('a',class_='n-snippet-cell2__image link').get('href')
                 #a=link.find('/',2)
                 #b=link[a+1:50]
-                link_mobile = link.split('/')
-                telefony = link_mobile[2]
-                id_telefony = telefony.split('=')
-                link_id_telefony = id_telefony[0]
-                modile_id = link_id_telefony.split('?')
-
-                if modile_id[0] not in links:
+                #link_mobile = link.split('/')
+                #telefony = link_mobile[2]
+                #id_telefony = telefony.split('=')
+                #link_id_telefony = id_telefony[0]
+                mobile_url = link.split('?')
                 
+                
+                if mobile_url[0] not in links:
+                    mobile_name=mobile_url[0].split('/')                    
+
                     links.append({
-                                "id":modile_id[0]                        
+                                "url":mobile_url[0],
+                                "name":mobile_name[1][18:].capitalize(),
+                                "id": mobile_name[2]
 
                             }) 
 
@@ -57,5 +67,5 @@ def get_mobile_all():
 
 
 result_review=get_mobile_all()
-
+print(result_review)
     
