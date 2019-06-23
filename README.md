@@ -20,7 +20,8 @@ Python 3.6.8
 ---------------------------------------------------
 ### ИМЯ РАЗРАБОТЧИКА И КОНТАКТЫ
 DARIA BOCHAROVA, E-MAIL: bocharova_d_m@mail.ru
-Github: DaryaBocharova /n
+Github: DaryaBocharova
+
 MARIA RODIONOVA,E-MAIL: maria.rodionova@laredoute.ru
 Github: MaryRodionova
 
