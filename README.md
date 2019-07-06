@@ -18,7 +18,7 @@ SQLite Version: 5.3.4.451
 Python 3.6.8
 
 ---------------------------------------------------
-### ИМЯ РАЗРАБОТЧИКА И КОНТАКТЫ
+### ИМЕНА РАЗРАБОТЧИКОВ И КОНТАКТЫ
 DARIA BOCHAROVA, E-MAIL: bocharova_d_m@mail.ru
 Github: DaryaBocharova
 
