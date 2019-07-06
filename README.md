@@ -27,5 +27,5 @@ Github: MaryRodionova
 
 ---------------------------------------------------
 ### КОМАНДЫ ДЛЯ СБОРКИ ПРИЛОЖЕНИЯ:
-python models.py
+python model.py
 
